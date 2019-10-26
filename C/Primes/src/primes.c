@@ -63,6 +63,12 @@ void prime_factor(int num)
 {
 	int i = 2, j = 0, k, max = num;
 	pair *arr = create_prime_list(num);
+
+	if (!arr[num].is_checked) {
+		printf("%d is prime and cannot be factored further\n", num);
+		return;
+	}
+
 	while (i <= num) {
 		if (num % i == 0) {
 			j++;
